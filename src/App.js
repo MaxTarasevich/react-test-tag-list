@@ -1,11 +1,12 @@
 
 import './App.scss';
+import TodoList from './components/TodoList';
 
 
 function App() {
   return (
-    <div className="App">
-     Start
+    <div className="todo-app">
+    <TodoList />
     </div>
   );
 }
