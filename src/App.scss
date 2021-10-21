@@ -16,12 +16,12 @@
   .todo-app {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     width: 520px;
     min-height: 600px;
     background: #161a2b;
     text-align: center;
-    margin: 128px auto;
+    margin: 2% auto;
     border-radius: 10px;
     padding-bottom: 32px;
   }
@@ -106,7 +106,7 @@
     width: 90%;
   }
   
-  .todo-row:nth-child(4n + 1) {
+  .todo-row:nth-child(4n + 1), .hashTag-item:nth-child(4n + 1) {
     background: linear-gradient(
       90deg,
       rgba(93, 12, 255, 1) 0%,
@@ -114,7 +114,7 @@
     );
   }
   
-  .todo-row:nth-child(4n + 2) {
+  .todo-row:nth-child(4n + 2), .hashTag-item:nth-child(4n + 2) {
     background: linear-gradient(
       90deg,
       rgba(255, 12, 241, 1) 0%,
@@ -122,11 +122,18 @@
     );
   }
   
-  .todo-row:nth-child(4n + 3) {
+  .todo-row:nth-child(4n + 3), .hashTag-item:nth-child(4n + 3) {
     background: linear-gradient(
       90deg,
       rgba(20, 159, 255, 1) 0%,
       rgba(17, 122, 255, 1) 100%
+    );
+  }
+  .hashTag-item{
+    background: linear-gradient(
+      90deg,
+      rgba(255, 118, 20, 1) 0%,
+      rgba(255, 84, 17, 1) 100%
     );
   }
   
@@ -140,8 +147,29 @@
   .delete-icon {
     margin-right: 5px;
     color: #fff;
+    cursor: pointer;
   }
   
   .edit-icon {
     color: #fff;
+  }
+  .hashtag{
+    color:#181111;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .hashTag-item{
+    margin-top: 10px;
+    padding: 8px 15px;
+    display: flex;
+    align-items:center;
+    color:#fff;
+    border-radius: 8px;
+  }
+  .hashTag-container{
+    margin-bottom: 20px;
+    padding: 0px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }

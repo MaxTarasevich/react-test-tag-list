@@ -1,0 +1,22 @@
+[
+        {
+            "id":1,
+            "text":"Learn #html",
+            "hashTag":["#html"]
+        },
+        {
+            "id":2,
+            "text":"Learn #css, #html",
+            "hashTag":["#css", "#html"]
+        },
+        {
+            "id":3,
+            "text":"Learn #js, #css, #html",
+            "hashTag":["#js", "#css", "#html"]
+        },
+        {
+            "id":4,
+            "text":"Learn #react",
+            "hashTag":["#react"]
+        }
+    ]

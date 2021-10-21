@@ -11,10 +11,15 @@ useEffect(()=>{
 
 const handleSubmit = e => {
     e.preventDefault()
+    let strArr = []
+    if(input.includes(`#`)){
+        strArr = input.split(` `).filter((item)=>item.includes(`#`) && item.length > 1)
+    }
 
     props.onSubmit({
         id:Date.now(),
-        text: input
+        text: input,
+        hashTag:strArr
     })
 
     setInput('')
