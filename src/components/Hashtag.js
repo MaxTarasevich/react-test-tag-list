@@ -1,5 +1,4 @@
 import React from 'react'
-import {RiCloseCircleLine} from 'react-icons/ri'
 
 function Hashtag({todos,filter}) {
 
@@ -13,13 +12,11 @@ function Hashtag({todos,filter}) {
         }
     }
    
-
     return (
         <div className='hashTag-container'>
            {hashArrUniq.map((item, index)=>{
               
                 return <span className={'hashTag-item'} key={index} onClick={()=>filter(item)} >
-                     <RiCloseCircleLine className='delete-icon' />
                     {item + ` `}
                     </span>
              

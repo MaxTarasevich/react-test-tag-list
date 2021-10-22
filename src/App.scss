@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 520px;
+    max-width: 520px;
     min-height: 600px;
     background: #161a2b;
     text-align: center;
@@ -49,8 +49,15 @@
     width: 320px;
     background: transparent;
     color: #fff;
+
   }
   
+@media (max-width:410px){
+  .todo-input{
+    width: 200px;
+  }
+}
+
   .todo-input::placeholder {
     color: #e2e2e2;
   }
@@ -100,7 +107,6 @@
       rgba(255, 118, 20, 1) 0%,
       rgba(255, 84, 17, 1) 100%
     );
-  
     padding: 16px;
     border-radius: 5px;
     width: 90%;
@@ -157,14 +163,25 @@
     color:#181111;
     font-weight: bold;
     cursor: pointer;
+    transition:color 0.8s ease-in-out;
+  }
+  .hashtag:hover{
+   color:#fff;
+  
   }
   .hashTag-item{
     margin-top: 10px;
+    margin-right: 5px;
     padding: 8px 15px;
     display: flex;
     align-items:center;
     color:#fff;
     border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  .hashTag-item:hover{
+    transform: scale(1.1);
   }
   .hashTag-container{
     margin-bottom: 20px;
