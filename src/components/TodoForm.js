@@ -13,7 +13,14 @@ const handleSubmit = e => {
     e.preventDefault()
     let strArr = []
     if(input.includes(`#`)){
-        strArr = input.split(` `).filter((item)=>item.includes(`#`) && item.length > 1)
+        strArr = input.split(` `)
+        .filter((item)=>item.includes(`#`) && item.length > 1)
+        .map((item) => {
+            if(item[item.length-1] === `,`){
+                return item.slice(0,-1)
+            }
+            return item
+        })
     }
 
     props.onSubmit({

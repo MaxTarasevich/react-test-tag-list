@@ -23,11 +23,16 @@ function Todo({todos,completeTodo, removeTodo, updateTodo}) {
    
 
     const filterTodo = (hashTag)=>{
+        if(hashTag[hashTag.length-1] === `,`){
+            hashTag = hashTag.slice(0,-1)
+        }
         if(hashTag === ''){
             setFilt([])
         }else{
             const filtered = [...todos].filter(todo => todo.hashTag.includes(hashTag))
             setFilt(filtered)
+            console.log(filtered)
+            console.log(hashTag)
         }
       
     }
@@ -43,10 +48,10 @@ function Todo({todos,completeTodo, removeTodo, updateTodo}) {
          <div className={todo.isComplete ?'todo-row complete' :'todo-row'}
              key={index}>
 
-                 <div key={todo.id} onClick={()=>completeTodo(todo.id)}>
+                 <div key={todo.id}>
                 {todo.text.split(` `).map((item, index)=>{
                     if(item.includes(`#`)){
-                        return <span key={index} className={'hashtag'}>{item} </span>
+                        return <span key={index} className={'hashtag'} onClick={()=>filterTodo(item)}>{item} </span>
                     }
                     return <span key={index}>{item} </span>
                 })}
@@ -71,10 +76,10 @@ function Todo({todos,completeTodo, removeTodo, updateTodo}) {
         <div className={todo.isComplete ?'todo-row complete' :'todo-row'}
             key={index}>
 
-                <div key={todo.id} onClick={()=>completeTodo(todo.id)}>
+                <div key={todo.id}>
                {todo.text.split(` `).map((item, index)=>{
                    if(item.includes(`#`)){
-                       return <span key={index} className={'hashtag'}>{item} </span>
+                       return <span key={index} className={'hashtag'} onClick={()=>filterTodo(item)}>{item} </span>
                    }
                    return <span key={index}>{item} </span>
                })}
