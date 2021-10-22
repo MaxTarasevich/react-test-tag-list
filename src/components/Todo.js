@@ -31,10 +31,7 @@ function Todo({todos,completeTodo, removeTodo, updateTodo}) {
         }else{
             const filtered = [...todos].filter(todo => todo.hashTag.includes(hashTag))
             setFilt(filtered)
-            console.log(filtered)
-            console.log(hashTag)
         }
-      
     }
 
     if(edit.id){
@@ -44,7 +41,8 @@ function Todo({todos,completeTodo, removeTodo, updateTodo}) {
     return <>
         <Hashtag todos={todos} filter={filterTodo}/>
 
-        {filt.length > 0 ? filt.map((todo,index)=>(
+        {filt.length > 0 ? 
+        filt.map((todo,index)=>(
          <div className={todo.isComplete ?'todo-row complete' :'todo-row'}
              key={index}>
 
@@ -55,9 +53,6 @@ function Todo({todos,completeTodo, removeTodo, updateTodo}) {
                     }
                     return <span key={index}>{item} </span>
                 })}
-               
-                
-                
                  </div>
 
                  <div className="icons">
@@ -68,13 +63,12 @@ function Todo({todos,completeTodo, removeTodo, updateTodo}) {
                     <TiEdit 
                        onClick={()=>setEdit({id: todo.id, value: todo.text})}
                        className='edit-icon'/>
-
                  </div>
-
         </div>
-    )) : todos.map((todo,index)=>(
-        <div className={todo.isComplete ?'todo-row complete' :'todo-row'}
-            key={index}>
+    )) : 
+        todos.map((todo,index)=>(
+            <div className={todo.isComplete ?'todo-row complete' :'todo-row'}
+                key={index}>
 
                 <div key={todo.id}>
                {todo.text.split(` `).map((item, index)=>{
@@ -83,23 +77,18 @@ function Todo({todos,completeTodo, removeTodo, updateTodo}) {
                    }
                    return <span key={index}>{item} </span>
                })}
-              
-               
-               
                 </div>
 
                 <div className="icons">
                    <RiCloseCircleLine 
-                   onClick={()=>removeTodo(todo.id)}
-                   className='delete-icon'
+                     onClick={()=>removeTodo(todo.id)}
+                     className='delete-icon'
                    />
                    <TiEdit 
                       onClick={()=>setEdit({id: todo.id, value: todo.text})}
                       className='edit-icon'/>
-
                 </div>
-
-       </div>
+            </div>
    ))}
     </>
 }

@@ -7,8 +7,6 @@ function TodoList() {
 
     const [todos, setTodos] = useState([...data])
 
-    
-
     const addTodo = todo =>{
         if(!todo.text || /^\s*$/.test(todo.text)){
             return
@@ -28,7 +26,7 @@ function TodoList() {
         return todo
         })
         setTodos(updatedTodos)
-}
+    }
 
     const removeTodo = (id)=>{
         const removeArr = [...todos].filter(todo => todo.id !== id)
@@ -42,8 +40,6 @@ function TodoList() {
 
         setTodos(prev => prev.map(item => item.id === todoId ? newValue : item))
     }
-
-   
 
     return (
         <div>
