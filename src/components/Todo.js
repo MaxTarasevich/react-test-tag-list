@@ -48,7 +48,7 @@ function Todo({todos,completeTodo, removeTodo, updateTodo}) {
 
                  <div key={todo.id}>
                 {todo.text.split(` `).map((item, index)=>{
-                    if(item.includes(`#`)){
+                    if(item[0] === `#`){
                         return <span key={index} className={'hashtag'} onClick={()=>filterTodo(item)}>{item} </span>
                     }
                     return <span key={index}>{item} </span>
@@ -72,7 +72,7 @@ function Todo({todos,completeTodo, removeTodo, updateTodo}) {
 
                 <div key={todo.id}>
                {todo.text.split(` `).map((item, index)=>{
-                   if(item.includes(`#`)){
+                   if(item[0] === `#`){
                        return <span key={index} className={'hashtag'} onClick={()=>filterTodo(item)}>{item} </span>
                    }
                    return <span key={index}>{item} </span>

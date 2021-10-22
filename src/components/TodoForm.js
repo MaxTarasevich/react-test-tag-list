@@ -14,7 +14,7 @@ const handleSubmit = e => {
     let strArr = []
     if(input.includes(`#`)){
         strArr = input.split(` `)
-        .filter((item)=>item.includes(`#`) && item.length > 1)
+        .filter((item)=>item[0]===`#` && item.length > 1)
         .map((item) => {
             if(item[item.length-1] === `,`){
                 return item.slice(0,-1)
