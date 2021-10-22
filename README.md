@@ -16,7 +16,7 @@
   <li>При редактировании записи, если убрать решетку перед словом - оно удалиться из списка тегов.</li>
   <li>Добавлен json- файл из котороко берутся стартовые записи с тегами.</li>
   <li>Использовался препрацессор SCSS</li>
-  <li>Ремозиторий: https://github.com/MaxTarasevich/react-test-tag-list</li>
+  <li>Репозиторий: https://github.com/MaxTarasevich/react-test-tag-list</li>
   <li>Деплой на netlify: https://goofy-shannon-58625b.netlify.app/</li>
 </ol>
 <p>Для создания приложения использовался React.</p>
